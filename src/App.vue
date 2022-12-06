@@ -10,7 +10,6 @@
 import Hello from '~/components/Hello'
 
 export default {
-	// 컴포넌트 등록
 	components: {
 		Hello,
 	},
