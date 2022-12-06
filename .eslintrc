@@ -1,0 +1,36 @@
+{
+	"env": {
+		// false로 해두면 전역 API인 window, document를 eslint로 확인하지 않겠다는 의미이다.
+		"browser": true,
+		// false로 해두면 module.exports, __dirname, require 등 전역 API, 전역 변수를 eslint로 확인하지 않겠다는 의미이다.
+		"node": true
+	},
+	"extends": [
+		// eslint에서 추천하는 규칙
+		"eslint:recommended",
+		"plugin:vue/vue3-recommended"
+	],
+	"rules": {
+		// 세미 콜론을 붙이지 않을 것이고, 규칙이 적용되지 않으면 에러를 발생시키겠다는 의미이다.
+		// never 대신 always로 하면 항상 세미 콜론을 붙여야 한다.
+		"semi": ["error", "never"],
+		// 작은 따옴표를 전제로 작성하겠다.
+		"quotes": ["error", "single"],
+		"vue/html-closing-bracket-newline": ["error", {
+			"singleline": "never",
+			"multiline": "never"
+		}],
+		"vue/html-self-closing": ["error", {
+			"html": {
+				// img 태그 등도 / 같은 셀프 클로징 태그가 붙도록 하기 위해 always
+				"void": "always",
+				// div와 같은 태그들은 내용이 비어있어도 셀프 클로징이 되지 않도록
+				"normal": "never",
+				// vue 컴포넌트는 빈 내용이면 셀프 클로징이 붙도록!
+				"component": "always"
+			},
+			"svg": "always",
+			"math": "always"
+		}]
+	}
+}

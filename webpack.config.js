@@ -1,7 +1,7 @@
-const path = require('path');
-const { VueLoaderPlugin } = require('vue-loader');
-const HtmlPlugin = require('html-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
+const path = require('path')
+const { VueLoaderPlugin } = require('vue-loader')
+const HtmlPlugin = require('html-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
 	// .vue, .js를 가지고 올 때는 확장자명을 생략하도록
@@ -45,4 +45,4 @@ module.exports = {
 			patterns: [{ from: 'static' }],
 		}),
 	],
-};
+}
