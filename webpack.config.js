@@ -13,6 +13,13 @@ module.exports = {
 			'~': path.resolve(__dirname, 'src'),
 		},
 	},
+	// webpack.config.js 파일을 기준
+	// 이 파일 기준에는 src가 있어 상대 경로로 찾아도 된다.
+	// 허나 다른 것은 webpack.config.js가 아니라 
+	// 동작하고 나서 output은 어디로 던져줄까? 즉 webpack.config.js 파일 기준이 아니고
+	// 내부 로직의 어딘가에서이기 때문에
+	// 완전히 절대 경로를 던져줘야 한다.
+	// 그래야 정확히 어디로 던져줄지 알 수 있게 된다.
 	entry: './src/main.js',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
