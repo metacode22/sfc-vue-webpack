@@ -25,6 +25,7 @@ module.exports = {
 		path: path.resolve(__dirname, 'dist'),
 		clean: true,
 	},
+	publicPath: '/',
 	module: {
 		rules: [
 			{
@@ -52,4 +53,7 @@ module.exports = {
 			patterns: [{ from: 'static' }],
 		}),
 	],
+	devServer: {
+		historyApiFallback: true
+	}
 }
