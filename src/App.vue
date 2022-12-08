@@ -18,7 +18,6 @@ export default {
 			msg: 'Hello Vue!',
 		}
 	},
-
 }
 </script>
 
