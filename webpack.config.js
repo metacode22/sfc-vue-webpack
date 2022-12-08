@@ -48,8 +48,14 @@ module.exports = {
 			},
 			{
 				// s가 있어도 되고 없어도 되고
+				// 밑에서부터 차례대로 실행된다. sass가 작동하고 나서 postcss가 작동해야 한다. sass는 전처리기, postcss는 후처리기니까.
 				test: /\.s?css$/,
-				use: ['vue-style-loader', 'css-loader', 'sass-loader'],
+				use: [
+					'vue-style-loader', 
+					'css-loader',
+					'postcss-loader',
+					'sass-loader'
+				],
 			},
 		],
 	},
