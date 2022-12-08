@@ -29,6 +29,16 @@ module.exports = {
 	module: {
 		rules: [
 			{
+				test: /\.js$/,
+				// babel 사용 시 주의할 점이다.
+				// node_modules는 변환시키지 않도록 해줘야 한다.
+				// 근데 axios는 제외해줘야 한다.
+				// ?!은 정규식에서 해당 단어를 제외한다는 것이다.
+				// 다른 걸 명시하려면 (?!axios|xxxxx|xxxxx) 이렇게 작성해주면 된다.
+				exclude: /node_modules\/(?!axios)/,
+				use: 'babel-loader'
+			},
+			{
 				// .은 정규식에서 의미를 가진다. 따라서 이를 탈출하기 위해 역슬래쉬 \를 붙여준다.
 				// $은 해당 글자로 끝나는 단어를 의미한다.
 				// 정규식에는 test라는 메서드가 있어 이를 통해 맞는지 확인한다.
