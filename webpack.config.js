@@ -54,12 +54,14 @@ module.exports = {
 					'vue-style-loader', 
 					'css-loader',
 					'postcss-loader',
-					{
-						loader: 'sass-loader',
-						options: {
-							additionalData: '@import "~/scss/_variables";'
-						}
-					}
+					'sass-loader'
+					// 다음과 같이 설정 시, 컴포넌트의 style 태그에 additionalData의 코드가 자동으로 삽입된다.
+					// {
+					// 	loader: 'sass-loader',
+					// 	options: {
+					// 		additionalData: '@import "~/scss/_variables";'
+					// 	}
+					// }
 				],
 			},
 		],
