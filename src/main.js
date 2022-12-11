@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from '~/App'
 import store from '~/store'
-import router from '~/router'
+import router from '~/routes'
 
 const app = createApp(App)
 app.use(store)
