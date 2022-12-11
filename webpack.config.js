@@ -54,12 +54,23 @@ module.exports = {
 					'vue-style-loader', 
 					'css-loader',
 					'postcss-loader',
-					'sass-loader'
+					'sass-loader',
 					// 다음과 같이 설정 시, 컴포넌트의 style 태그에 additionalData의 코드가 자동으로 삽입된다.
+					// use는 다른 것보다 먼저 위치해야 한다.
+					// scss 코드들을 변환하는 과정에서만 use로 가져온 모듈이 사용되기에 빌드된 제품의 성능에는 영향을 끼치지 않는다.
 					// {
 					// 	loader: 'sass-loader',
 					// 	options: {
-					// 		additionalData: '@import "~/scss/_variables";'
+					// 		additionalData: `
+					// 			@use "sass:color";
+					// 			@use "sass:list";
+					// 			@use "sass:map";
+					// 			@use "sass:math";
+					// 			@use "sass:meta";
+					// 			@use "sass:selector";
+					// 			@use "sass:string";
+					// 			@import "~/scss/_variables";
+					// 		`
 					// 	}
 					// }
 				],
