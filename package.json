@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --mode development",
+    "dev:webpack": "webpack-dev-server --mode development",
+    "dev": "netlify dev",
     "build": "webpack --mode production"
   },
   "keywords": [],
@@ -24,9 +25,11 @@
     "babel-loader": "^9.1.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.2",
+    "dotenv": "^16.0.3",
     "eslint": "^8.29.0",
     "eslint-plugin-vue": "^9.8.0",
     "html-webpack-plugin": "^5.5.0",
+    "netlify-cli": "^12.2.9",
     "postcss": "^8.4.19",
     "postcss-loader": "^7.0.2",
     "sass": "^1.56.1",
@@ -38,6 +41,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "axios": "^1.2.1",
     "vue": "^3.2.45",
     "vue-router": "^4.0.13",
     "vuex": "^4.0.2"

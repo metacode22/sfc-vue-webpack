@@ -88,6 +88,8 @@ module.exports = {
 		}),
 	],
 	devServer: {
+		// 기본 port는 8080
+		port: 8079,
 		historyApiFallback: true
 	}
 }
